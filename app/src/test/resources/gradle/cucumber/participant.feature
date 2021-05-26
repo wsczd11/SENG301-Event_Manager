@@ -27,21 +27,35 @@
 
 Feature: U3 - Add participant to event
 
-  Scenario: AC1 - I can add one existing participant to an event by its name (non-empty).
+  Background:
     Given There is one event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/06/2021"
-    And There is a participant with name "Erica"
+
+  Scenario: AC1 - I can add one existing participant to an event by its name (non-empty).
+    Given There is a participant with name "Erica"
     When I add this participant to the given event
     Then The participant "Erica" has been add to event "SENG301 Lab"
 
   Scenario: AC2 - I can add one participant that does not exist yet. This participant will be created as a side effect with given non-empty name.
-    Given There is one event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/06/2021"
-    And There is no participant with name "Erica"
+    Given There is no participant with name "Erica"
     When I add a not exist participant "Erica" to the given event
     Then The participant "Erica" has been add to event "SENG301 Lab"
 
-#  AC.3 I cannot add empty participants, or participants with names containing invalid characters (e.g., numbers).
-  Scenario: AC3 - The name of participant must not be empty
-    Given There is an event with name "SENG301 Asg 3", description "Let's learn some patterns", type "assignment" and date "07/06/2021"
-    When I add not exist participants " " and "Erica" to Event "SENG301 Asg 3"
-    Then The participant " " has not been add to event "SENG301 Asg 3"
-    Then The participant "Erica" has been add to event "SENG301 Asg 3"
+  Scenario: AC3 - I cannot add empty participants
+    Given A list of participant
+    When I do not add any participant into list
+    Then I expect an exception that disallow me to add participants
+
+  Scenario: AC3 - The name of participant must not contain any number
+    Given A list of participant
+    When I do add a participant "Erica123" into list
+    Then I expect an exception that disallow me to add participants
+
+  Scenario: AC3 - The name of participant must not contain any symbol
+    Given A list of participant
+    When I do add a participant "Erica!!!" into list
+    Then I expect an exception that disallow me to add participants
+
+  Scenario: AC3 - The name of participant must not only contain space
+    Given A list of participant
+    When I do add a participant "   " into list
+    Then I expect an exception that disallow me to add participants

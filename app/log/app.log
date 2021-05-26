@@ -752,3 +752,115 @@
 21:01:26.792 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name Erica
 21:01:26.796 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
 21:01:26.814 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+21:22:12.980 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:22:13.109 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:22:13.122 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:22:13.127 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:22:53.471 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:22:53.605 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:22:53.617 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:22:53.622 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:22:53.648 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:22:53.648 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:22:53.648 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:23:40.663 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:23:40.800 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:23:40.818 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:23:40.826 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:23:40.856 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:23:40.856 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:23:40.856 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:27:26.696 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:27:26.835 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:27:26.848 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:27:26.857 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:27:26.901 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:27:26.902 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:27:26.902 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:28:12.700 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:28:12.813 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:28:12.823 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:28:12.827 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:28:12.859 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:28:12.859 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:28:12.859 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+21:32:50.000 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:32:50.132 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:32:50.144 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:32:50.149 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:41:06.196 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:41:06.332 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:41:06.345 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:41:06.351 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:44:32.158 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:44:32.307 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:44:32.325 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:44:32.331 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:53:29.036 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:53:29.191 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:53:29.205 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:53:29.211 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:53:29.237 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='Erica123', events='[]'}: true
+21:53:29.257 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:53:29.258 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='Erica123', events='[]'}]
+21:53:29.258 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='Erica123', events='[]'}]
+21:54:31.250 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:54:31.372 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:54:31.383 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:54:31.388 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:54:31.410 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='Erica123', events='[]'}: true
+21:54:31.427 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:54:31.428 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='Erica123', events='[]'}]
+21:54:31.428 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='Erica123', events='[]'}]
+21:54:58.035 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:54:58.181 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:54:58.193 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:54:58.198 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:54:58.219 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='Erica123', events='[]'}: true
+21:54:58.239 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='2', name='SENG301 Lab', description='Let's learn some patterns', cost='0.0', date='Tue Jun 08 00:00:00 NZST 2021', eventType='{ eventTypeId='1', name='lab'}', location='null'}
+21:54:58.239 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='Erica123', events='[]'}]
+21:54:58.239 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='Erica123', events='[]'}]
+21:55:13.898 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:55:14.038 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:55:14.052 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:55:14.059 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:55:32.139 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:55:32.266 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:55:32.277 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:55:32.283 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:55:38.209 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:55:38.337 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:55:38.349 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:55:38.354 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:03.440 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:56:03.608 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:56:03.624 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:56:03.632 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:03.667 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='Erica', events='[]'}
+21:56:03.668 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name Erica
+21:56:03.696 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:03.720 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+21:56:04.215 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:56:04.225 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:56:04.227 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:56:04.233 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:04.245 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='Erica', events='[]'}
+21:56:04.245 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name Erica
+21:56:04.249 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:04.254 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+21:56:04.730 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:56:04.736 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:56:04.739 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:56:04.744 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:05.178 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:56:05.183 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:56:05.186 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:56:05.194 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:05.771 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:56:05.777 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:56:05.780 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:56:05.783 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'
+21:56:06.183 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'lab'
+21:56:06.187 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+21:56:06.189 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'SENG301 Lab'
+21:56:06.194 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'SENG301 Lab'

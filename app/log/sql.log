@@ -8157,3 +8157,1218 @@
 21:01:26.845 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_locat1_2_3_] : [BIGINT]) - [null]
 21:01:26.845 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti2_4_0_] : [BIGINT]) - [3]
 21:01:26.845 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_4_0_] : [BIGINT]) - [2]
+21:22:12.452 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:22:12.456 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:22:12.457 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:22:12.458 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:22:12.459 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:22:12.460 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:22:12.463 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:22:12.464 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:22:12.465 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:22:12.466 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:22:12.466 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:22:12.467 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:22:12.468 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:22:12.747 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:22:12.749 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:22:12.750 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:22:12.751 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:22:12.751 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:22:12.752 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:22:12.753 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:22:12.754 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:22:12.755 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:22:12.756 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:22:12.757 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:22:12.758 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:22:12.759 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:22:12.918 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:22:12.919 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:22:12.920 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:22:12.921 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:22:12.922 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:22:12.923 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:22:12.924 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:22:12.925 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:22:12.925 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:22:12.926 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:22:12.927 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:22:12.927 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:22:12.928 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:22:13.084 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:22:13.095 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:22:13.095 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:22:13.116 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:22:13.118 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:22:13.118 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:22:13.126 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:22:13.128 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:22:13.128 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:22:13.131 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:22:13.132 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:22:13.132 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:22:13.133 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:22:13.133 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:22:13.133 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:22:13.133 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:22:13.133 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:22:52.988 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:22:52.993 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:22:52.995 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:22:52.996 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:22:52.997 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:22:52.998 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:22:53.001 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:22:53.003 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:22:53.003 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:22:53.004 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:22:53.005 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:22:53.006 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:22:53.006 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:22:53.263 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:22:53.265 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:22:53.266 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:22:53.266 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:22:53.267 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:22:53.268 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:22:53.269 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:22:53.270 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:22:53.271 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:22:53.271 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:22:53.272 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:22:53.273 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:22:53.273 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:22:53.395 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:22:53.397 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:22:53.398 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:22:53.398 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:22:53.399 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:22:53.400 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:22:53.401 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:22:53.402 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:22:53.403 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:22:53.404 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:22:53.404 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:22:53.405 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:22:53.406 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:22:53.580 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:22:53.591 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:22:53.591 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:22:53.611 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:22:53.613 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:22:53.613 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:22:53.621 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:22:53.623 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:22:53.623 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:22:53.625 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:22:53.626 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:22:53.626 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:22:53.627 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:22:53.627 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:22:53.627 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:22:53.627 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:22:53.627 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:23:40.122 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:23:40.126 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:23:40.127 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:23:40.128 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:23:40.130 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:23:40.131 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:23:40.136 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:23:40.137 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:23:40.138 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:23:40.139 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:23:40.139 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:23:40.140 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:23:40.141 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:23:40.432 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:23:40.434 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:23:40.434 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:23:40.435 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:23:40.436 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:23:40.437 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:23:40.438 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:23:40.439 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:23:40.440 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:23:40.441 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:23:40.442 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:23:40.443 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:23:40.444 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:23:40.600 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:23:40.602 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:23:40.603 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:23:40.604 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:23:40.605 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:23:40.606 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:23:40.607 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:23:40.607 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:23:40.608 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:23:40.609 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:23:40.610 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:23:40.610 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:23:40.611 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:23:40.773 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:23:40.784 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:23:40.784 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:23:40.810 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:23:40.812 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:23:40.812 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:23:40.823 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:23:40.828 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:23:40.828 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:23:40.831 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:23:40.831 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:23:40.831 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:23:40.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:23:40.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:23:40.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:23:40.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:23:40.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:27:26.141 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:27:26.145 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:27:26.147 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:27:26.148 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:27:26.149 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:27:26.150 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:27:26.154 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:27:26.155 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:27:26.156 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:27:26.156 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:27:26.157 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:27:26.158 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:27:26.159 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:27:26.453 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:27:26.454 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:27:26.455 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:27:26.456 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:27:26.457 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:27:26.457 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:27:26.458 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:27:26.459 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:27:26.460 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:27:26.460 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:27:26.461 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:27:26.462 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:27:26.462 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:27:26.616 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:27:26.618 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:27:26.619 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:27:26.620 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:27:26.621 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:27:26.622 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:27:26.623 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:27:26.624 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:27:26.626 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:27:26.627 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:27:26.628 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:27:26.629 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:27:26.630 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:27:26.808 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:27:26.820 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:27:26.820 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:27:26.842 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:27:26.844 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:27:26.844 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:27:26.853 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:27:26.859 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:27:26.860 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:27:26.862 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:27:26.863 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:27:26.863 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:27:26.864 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:27:26.865 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:27:26.865 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:27:26.865 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:27:26.865 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:28:12.202 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:28:12.206 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:28:12.207 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:28:12.208 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:28:12.209 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:28:12.210 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:28:12.213 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:28:12.214 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:28:12.215 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:28:12.215 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:28:12.216 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:28:12.217 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:28:12.218 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:28:12.469 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:28:12.470 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:28:12.471 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:28:12.472 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:28:12.473 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:28:12.474 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:28:12.475 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:28:12.476 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:28:12.476 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:28:12.477 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:28:12.478 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:28:12.479 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:28:12.479 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:28:12.636 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:28:12.637 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:28:12.638 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:28:12.639 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:28:12.640 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:28:12.641 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:28:12.642 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:28:12.643 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:28:12.644 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:28:12.644 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:28:12.645 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:28:12.646 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:28:12.647 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:28:12.792 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:28:12.801 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:28:12.802 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:28:12.818 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:28:12.819 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:28:12.820 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:28:12.826 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:28:12.828 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:28:12.828 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:28:12.831 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:28:12.831 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:28:12.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:28:12.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:28:12.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:28:12.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:28:12.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:28:12.832 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:32:49.504 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:32:49.509 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:32:49.511 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:32:49.512 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:32:49.513 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:32:49.514 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:32:49.518 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:32:49.519 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:32:49.519 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:32:49.520 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:32:49.521 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:32:49.522 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:32:49.523 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:32:49.796 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:32:49.798 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:32:49.799 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:32:49.799 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:32:49.800 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:32:49.801 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:32:49.802 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:32:49.803 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:32:49.804 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:32:49.805 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:32:49.805 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:32:49.806 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:32:49.807 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:32:49.937 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:32:49.938 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:32:49.939 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:32:49.940 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:32:49.940 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:32:49.941 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:32:49.942 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:32:49.943 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:32:49.944 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:32:49.944 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:32:49.945 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:32:49.945 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:32:49.946 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:32:50.107 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:32:50.118 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:32:50.119 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:32:50.139 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:32:50.140 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:32:50.140 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:32:50.148 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:32:50.150 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:32:50.151 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:32:50.153 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:32:50.153 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:32:50.154 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:32:50.154 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:32:50.154 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:32:50.154 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:32:50.154 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:32:50.154 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:41:05.676 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:41:05.679 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:41:05.681 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:41:05.682 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:41:05.683 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:41:05.684 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:41:05.688 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:41:05.689 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:41:05.690 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:41:05.690 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:41:05.691 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:41:05.692 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:41:05.693 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:41:05.996 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:41:05.997 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:41:05.998 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:41:05.999 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:41:06.000 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:41:06.001 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:41:06.002 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:41:06.003 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:41:06.003 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:41:06.004 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:41:06.005 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:41:06.006 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:41:06.007 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:41:06.133 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:41:06.134 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:41:06.135 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:41:06.136 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:41:06.137 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:41:06.137 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:41:06.138 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:41:06.139 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:41:06.140 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:41:06.140 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:41:06.141 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:41:06.142 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:41:06.143 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:41:06.304 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:41:06.315 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:41:06.315 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:41:06.338 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:41:06.340 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:41:06.340 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:41:06.349 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:41:06.352 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:41:06.352 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:41:06.355 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:41:06.355 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:41:06.357 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:41:06.357 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:41:06.358 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:41:06.358 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:41:06.358 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:41:06.358 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:44:31.560 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:44:31.564 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:44:31.566 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:44:31.567 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:44:31.568 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:44:31.569 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:44:31.572 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:44:31.576 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:44:31.577 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:44:31.577 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:44:31.578 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:44:31.579 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:44:31.580 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:44:31.904 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:44:31.906 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:44:31.907 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:44:31.908 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:44:31.909 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:44:31.911 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:44:31.912 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:44:31.913 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:44:31.914 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:44:31.916 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:44:31.917 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:44:31.919 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:44:31.919 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:44:32.082 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:44:32.084 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:44:32.085 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:44:32.086 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:44:32.086 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:44:32.087 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:44:32.089 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:44:32.090 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:44:32.090 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:44:32.091 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:44:32.092 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:44:32.093 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:44:32.094 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:44:32.275 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:44:32.289 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:44:32.290 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:44:32.316 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:44:32.318 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:44:32.318 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:44:32.330 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:44:32.334 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:44:32.334 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:44:32.338 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:44:32.339 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:44:32.340 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:44:32.342 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:44:32.342 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:44:32.342 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:44:32.342 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:44:32.342 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:53:28.450 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:53:28.454 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:53:28.456 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:53:28.457 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:53:28.458 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:53:28.460 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:53:28.463 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:53:28.465 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:53:28.466 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:53:28.467 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:53:28.468 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:53:28.469 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:53:28.471 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:53:28.779 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:53:28.781 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:53:28.782 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:53:28.783 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:53:28.783 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:53:28.784 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:53:28.785 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:53:28.786 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:53:28.787 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:53:28.788 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:53:28.788 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:53:28.789 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:53:28.790 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:53:28.942 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:53:28.944 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:53:28.945 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:53:28.946 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:53:28.947 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:53:28.948 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:53:28.949 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:53:28.950 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:53:28.951 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:53:28.951 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:53:28.952 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:53:28.954 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:53:28.956 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:53:29.162 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:53:29.174 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:53:29.175 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:53:29.198 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:53:29.200 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:53:29.200 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:53:29.210 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:53:29.213 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:53:29.213 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:53:29.216 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:53:29.217 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:53:29.217 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:53:29.218 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:53:29.218 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:53:29.218 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:53:29.218 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:53:29.218 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:54:30.757 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:54:30.760 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:54:30.762 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:54:30.762 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:54:30.763 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:54:30.764 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:54:30.767 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:54:30.768 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:54:30.769 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:54:30.770 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:54:30.771 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:54:30.771 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:54:30.772 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:54:31.028 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:54:31.030 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:54:31.031 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:54:31.032 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:54:31.033 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:54:31.033 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:54:31.034 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:54:31.035 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:54:31.036 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:54:31.037 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:54:31.038 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:54:31.038 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:54:31.039 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:54:31.163 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:54:31.165 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:54:31.165 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:54:31.166 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:54:31.167 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:54:31.168 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:54:31.169 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:54:31.169 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:54:31.170 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:54:31.171 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:54:31.172 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:54:31.173 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:54:31.174 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:54:31.347 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:54:31.357 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:54:31.357 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:54:31.378 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:54:31.379 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:54:31.379 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:54:31.387 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:54:31.390 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:54:31.390 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:54:31.393 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:54:31.393 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:54:31.393 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:54:31.394 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:54:31.394 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:54:31.394 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:54:31.394 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:54:31.394 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:54:57.484 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:54:57.487 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:54:57.488 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:54:57.489 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:54:57.490 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:54:57.491 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:54:57.494 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:54:57.496 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:54:57.497 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:54:57.498 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:54:57.498 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:54:57.499 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:54:57.500 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:54:57.786 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:54:57.788 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:54:57.789 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:54:57.790 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:54:57.791 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:54:57.791 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:54:57.792 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:54:57.793 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:54:57.794 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:54:57.795 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:54:57.798 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:54:57.800 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:54:57.801 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:54:57.942 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:54:57.943 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:54:57.945 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:54:57.945 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:54:57.946 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:54:57.947 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:54:57.948 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:54:57.949 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:54:57.950 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:54:57.951 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:54:57.951 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:54:57.952 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:54:57.953 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:54:58.155 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:54:58.166 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:54:58.166 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:54:58.187 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:54:58.189 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:54:58.189 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:54:58.197 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:54:58.200 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:54:58.200 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:54:58.203 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:54:58.203 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:54:58.204 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:54:58.204 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:54:58.204 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:54:58.204 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:54:58.205 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:54:58.205 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:55:13.326 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:13.329 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:13.330 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:13.331 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:13.332 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:13.333 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:13.336 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:13.337 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:13.338 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:13.339 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:13.340 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:13.341 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:13.341 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:13.644 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:13.646 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:13.646 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:13.647 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:13.648 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:13.649 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:13.650 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:13.651 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:13.652 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:13.653 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:13.654 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:13.655 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:13.656 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:13.805 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:13.806 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:13.807 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:13.808 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:13.809 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:13.810 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:13.811 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:13.812 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:13.813 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:13.814 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:13.815 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:13.815 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:13.816 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:14.008 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:55:14.021 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:55:14.021 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:55:14.045 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:55:14.047 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:55:14.047 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:55:14.058 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:55:14.061 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:55:14.061 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:55:14.064 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:55:14.065 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:55:14.065 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:55:14.066 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:55:14.066 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:55:14.066 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:55:14.066 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:55:14.066 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:55:31.624 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:31.627 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:31.628 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:31.629 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:31.630 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:31.631 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:31.634 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:31.635 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:31.636 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:31.638 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:31.639 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:31.640 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:31.641 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:31.926 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:31.928 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:31.930 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:31.930 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:31.931 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:31.932 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:31.933 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:31.934 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:31.935 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:31.935 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:31.936 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:31.937 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:31.938 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:32.071 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:32.073 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:32.074 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:32.075 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:32.075 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:32.076 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:32.077 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:32.078 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:32.079 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:32.079 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:32.080 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:32.081 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:32.082 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:32.239 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:55:32.251 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:55:32.251 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:55:32.272 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:55:32.273 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:55:32.273 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:55:32.282 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:55:32.284 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:55:32.285 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:55:32.287 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:55:32.287 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:55:32.288 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:55:32.288 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:55:32.289 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:55:32.289 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:55:32.289 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:55:32.289 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:55:37.727 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:37.729 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:37.731 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:37.731 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:37.732 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:37.733 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:37.736 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:37.737 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:37.738 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:37.739 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:37.739 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:37.740 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:37.741 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:37.991 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:37.993 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:37.993 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:37.994 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:37.995 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:37.996 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:37.996 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:37.997 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:37.998 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:37.999 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:37.999 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:38.000 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:38.001 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:38.135 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:55:38.136 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:55:38.137 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:55:38.138 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:55:38.139 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:55:38.140 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:55:38.141 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:55:38.142 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:55:38.143 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:55:38.144 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:55:38.144 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:55:38.145 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:55:38.146 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:55:38.310 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:55:38.322 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:55:38.322 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:55:38.343 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:55:38.345 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:55:38.345 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:55:38.353 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:55:38.356 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:55:38.356 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:55:38.358 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:55:38.359 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:55:38.359 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:55:38.360 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:55:38.360 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:55:38.360 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:55:38.360 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:55:38.360 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:02.934 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:02.937 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:02.938 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:02.939 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:02.940 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:02.941 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:02.945 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:02.946 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:02.947 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:02.948 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:02.949 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:02.950 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:02.951 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:03.225 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:03.226 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:03.227 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:03.228 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:03.229 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:03.230 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:03.232 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:03.233 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:03.234 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:03.234 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:03.235 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:03.236 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:03.237 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:03.366 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:03.368 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:03.369 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:03.369 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:03.370 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:03.371 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:03.372 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:03.373 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:03.373 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:03.374 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:03.375 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:03.376 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:03.377 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:03.577 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:56:03.590 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:03.591 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:03.616 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:56:03.619 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:56:03.619 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:56:03.629 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:56:03.635 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:03.635 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:03.638 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:56:03.639 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:03.640 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:03.640 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:03.640 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:03.641 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:03.641 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:03.641 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:03.652 [main] DEBUG org.hibernate.SQL - select participan0_.id_participant as id_parti1_3_, participan0_.name as name2_3_ from participant participan0_ where participan0_.name='Erica'
+21:56:03.656 [main] DEBUG org.hibernate.SQL - select participan0_.id_participant as id_parti1_3_, participan0_.name as name2_3_ from participant participan0_ where participan0_.name='Erica'
+21:56:03.668 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:03.668 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:03.670 [main] DEBUG org.hibernate.SQL - insert into participant (name, id_participant) values (?, ?)
+21:56:03.671 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Erica]
+21:56:03.671 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [3]
+21:56:03.673 [main] DEBUG org.hibernate.SQL - select participan0_.id_participant as id_parti1_3_, participan0_.name as name2_3_ from participant participan0_ where participan0_.name='Erica'
+21:56:03.674 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti1_3_] : [BIGINT]) - [3]
+21:56:03.676 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_3_] : [VARCHAR]) - [Erica]
+21:56:03.687 [main] DEBUG org.hibernate.SQL - select events0_.id_participant as id_parti2_4_0_, events0_.id_event as id_event1_4_0_, event1_.id_event as id_event2_0_1_, event1_.cost as cost3_0_1_, event1_.date as date4_0_1_, event1_.description as descript5_0_1_, event1_.id_event_type as id_event7_0_1_, event1_.id_location as id_locat8_0_1_, event1_.name as name6_0_1_, event1_.event_status as event_st1_0_1_, eventtype2_.id_event_type as id_event1_1_2_, eventtype2_.name as name2_1_2_, location3_.id_location as id_locat1_2_3_, location3_.latitude as latitude2_2_3_, location3_.longitude as longitud3_2_3_, location3_.name as name4_2_3_ from participant_attends_event events0_ inner join event event1_ on events0_.id_event=event1_.id_event left outer join EventType eventtype2_ on event1_.id_event_type=eventtype2_.id_event_type left outer join location location3_ on event1_.id_location=location3_.id_location where events0_.id_participant=?
+21:56:03.687 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+21:56:03.705 [main] DEBUG org.hibernate.SQL - update event set cost=?, date=?, description=?, id_event_type=?, id_location=?, name=? where id_event=?
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:03.705 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:03.711 [main] DEBUG org.hibernate.SQL - delete from participant_attends_event where id_event=?
+21:56:03.711 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+21:56:03.713 [main] DEBUG org.hibernate.SQL - insert into participant_attends_event (id_event, id_participant) values (?, ?)
+21:56:03.713 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+21:56:03.714 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [3]
+21:56:03.726 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.id_event=2
+21:56:03.727 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event2_0_] : [BIGINT]) - [2]
+21:56:03.727 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([event_st1_0_] : [VARCHAR]) - [SCHEDULED]
+21:56:03.728 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([cost3_0_] : [DOUBLE]) - [0.0]
+21:56:03.728 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([date4_0_] : [TIMESTAMP]) - [2021-06-08 00:00:00.0]
+21:56:03.728 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([descript5_0_] : [VARCHAR]) - [Let's learn some patterns]
+21:56:03.729 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event7_0_] : [BIGINT]) - [1]
+21:56:03.729 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_locat8_0_] : [BIGINT]) - [null]
+21:56:03.729 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name6_0_] : [VARCHAR]) - [SENG301 Lab]
+21:56:03.734 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_0_, eventtype0_.name as name2_1_0_ from EventType eventtype0_ where eventtype0_.id_event_type=?
+21:56:03.734 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+21:56:03.735 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [lab]
+21:56:03.737 [main] DEBUG org.hibernate.SQL - select participan0_.id_event as id_event1_4_0_, participan0_.id_participant as id_parti2_4_0_, participan1_.id_participant as id_parti1_3_1_, participan1_.name as name2_3_1_ from participant_attends_event participan0_ inner join participant participan1_ on participan0_.id_participant=participan1_.id_participant where participan0_.id_event=?
+21:56:03.738 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+21:56:03.738 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti1_3_1_] : [BIGINT]) - [3]
+21:56:03.738 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_3_1_] : [VARCHAR]) - [Erica]
+21:56:03.738 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_4_0_] : [BIGINT]) - [2]
+21:56:03.739 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti2_4_0_] : [BIGINT]) - [3]
+21:56:03.740 [main] DEBUG org.hibernate.SQL - select events0_.id_participant as id_parti2_4_0_, events0_.id_event as id_event1_4_0_, event1_.id_event as id_event2_0_1_, event1_.cost as cost3_0_1_, event1_.date as date4_0_1_, event1_.description as descript5_0_1_, event1_.id_event_type as id_event7_0_1_, event1_.id_location as id_locat8_0_1_, event1_.name as name6_0_1_, event1_.event_status as event_st1_0_1_, eventtype2_.id_event_type as id_event1_1_2_, eventtype2_.name as name2_1_2_, location3_.id_location as id_locat1_2_3_, location3_.latitude as latitude2_2_3_, location3_.longitude as longitud3_2_3_, location3_.name as name4_2_3_ from participant_attends_event events0_ inner join event event1_ on events0_.id_event=event1_.id_event left outer join EventType eventtype2_ on event1_.id_event_type=eventtype2_.id_event_type left outer join location location3_ on event1_.id_location=location3_.id_location where events0_.id_participant=?
+21:56:03.740 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+21:56:03.741 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event2_0_1_] : [BIGINT]) - [2]
+21:56:03.741 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_1_2_] : [BIGINT]) - [1]
+21:56:03.741 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_locat1_2_3_] : [BIGINT]) - [null]
+21:56:03.741 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti2_4_0_] : [BIGINT]) - [3]
+21:56:03.741 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_4_0_] : [BIGINT]) - [2]
+21:56:03.900 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:03.902 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:03.903 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:03.904 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:03.905 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:03.905 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:03.907 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:03.908 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:03.909 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:03.910 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:03.911 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:03.913 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:03.914 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:04.043 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:04.047 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:04.048 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:04.049 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:04.050 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:04.051 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:04.054 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:04.056 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:04.058 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:04.059 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:04.060 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:04.061 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:04.062 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:04.196 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:04.198 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:04.199 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:04.200 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:04.201 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:04.202 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:04.203 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:04.205 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:04.206 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:04.207 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:04.208 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:04.209 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:04.210 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:04.221 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:56:04.223 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:04.223 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:04.225 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:56:04.225 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:56:04.226 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:56:04.231 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:56:04.233 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:04.234 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:04.236 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:04.236 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:04.242 [main] DEBUG org.hibernate.SQL - select participan0_.id_participant as id_parti1_3_, participan0_.name as name2_3_ from participant participan0_ where participan0_.name='Erica'
+21:56:04.244 [main] DEBUG org.hibernate.SQL - select participan0_.id_participant as id_parti1_3_, participan0_.name as name2_3_ from participant participan0_ where participan0_.name='Erica'
+21:56:04.245 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:04.246 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:04.248 [main] DEBUG org.hibernate.SQL - insert into participant (name, id_participant) values (?, ?)
+21:56:04.248 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Erica]
+21:56:04.248 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [3]
+21:56:04.250 [main] DEBUG org.hibernate.SQL - update event set cost=?, date=?, description=?, id_event_type=?, id_location=?, name=? where id_event=?
+21:56:04.250 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:04.250 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:04.250 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:04.251 [main] DEBUG org.hibernate.SQL - delete from participant_attends_event where id_event=?
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+21:56:04.251 [main] DEBUG org.hibernate.SQL - insert into participant_attends_event (id_event, id_participant) values (?, ?)
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+21:56:04.251 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [3]
+21:56:04.257 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.id_event=2
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event2_0_] : [BIGINT]) - [2]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([event_st1_0_] : [VARCHAR]) - [SCHEDULED]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([cost3_0_] : [DOUBLE]) - [0.0]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([date4_0_] : [TIMESTAMP]) - [2021-06-08 00:00:00.0]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([descript5_0_] : [VARCHAR]) - [Let's learn some patterns]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event7_0_] : [BIGINT]) - [1]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_locat8_0_] : [BIGINT]) - [null]
+21:56:04.258 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name6_0_] : [VARCHAR]) - [SENG301 Lab]
+21:56:04.259 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_0_, eventtype0_.name as name2_1_0_ from EventType eventtype0_ where eventtype0_.id_event_type=?
+21:56:04.259 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+21:56:04.259 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_1_0_] : [VARCHAR]) - [lab]
+21:56:04.260 [main] DEBUG org.hibernate.SQL - select participan0_.id_event as id_event1_4_0_, participan0_.id_participant as id_parti2_4_0_, participan1_.id_participant as id_parti1_3_1_, participan1_.name as name2_3_1_ from participant_attends_event participan0_ inner join participant participan1_ on participan0_.id_participant=participan1_.id_participant where participan0_.id_event=?
+21:56:04.260 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+21:56:04.261 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti1_3_1_] : [BIGINT]) - [3]
+21:56:04.261 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([name2_3_1_] : [VARCHAR]) - [Erica]
+21:56:04.261 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_4_0_] : [BIGINT]) - [2]
+21:56:04.261 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti2_4_0_] : [BIGINT]) - [3]
+21:56:04.262 [main] DEBUG org.hibernate.SQL - select events0_.id_participant as id_parti2_4_0_, events0_.id_event as id_event1_4_0_, event1_.id_event as id_event2_0_1_, event1_.cost as cost3_0_1_, event1_.date as date4_0_1_, event1_.description as descript5_0_1_, event1_.id_event_type as id_event7_0_1_, event1_.id_location as id_locat8_0_1_, event1_.name as name6_0_1_, event1_.event_status as event_st1_0_1_, eventtype2_.id_event_type as id_event1_1_2_, eventtype2_.name as name2_1_2_, location3_.id_location as id_locat1_2_3_, location3_.latitude as latitude2_2_3_, location3_.longitude as longitud3_2_3_, location3_.name as name4_2_3_ from participant_attends_event events0_ inner join event event1_ on events0_.id_event=event1_.id_event left outer join EventType eventtype2_ on event1_.id_event_type=eventtype2_.id_event_type left outer join location location3_ on event1_.id_location=location3_.id_location where events0_.id_participant=?
+21:56:04.263 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+21:56:04.263 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event2_0_1_] : [BIGINT]) - [2]
+21:56:04.263 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_1_2_] : [BIGINT]) - [1]
+21:56:04.263 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_locat1_2_3_] : [BIGINT]) - [null]
+21:56:04.263 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_parti2_4_0_] : [BIGINT]) - [3]
+21:56:04.263 [main] TRACE org.hibernate.type.descriptor.sql.BasicExtractor - extracted value ([id_event1_4_0_] : [BIGINT]) - [2]
+21:56:04.410 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:04.412 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:04.413 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:04.414 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:04.415 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:04.416 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:04.417 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:04.418 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:04.419 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:04.420 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:04.421 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:04.422 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:04.425 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:04.576 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:04.578 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:04.579 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:04.580 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:04.581 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:04.582 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:04.583 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:04.584 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:04.585 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:04.586 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:04.587 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:04.588 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:04.589 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:04.709 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:04.710 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:04.711 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:04.712 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:04.713 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:04.714 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:04.715 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:04.716 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:04.717 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:04.718 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:04.719 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:04.722 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:04.723 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:04.733 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:56:04.735 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:04.735 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:04.737 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:56:04.737 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:56:04.737 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:56:04.743 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:56:04.744 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:04.745 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:04.747 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:04.747 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:04.893 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:04.895 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:04.896 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:04.897 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:04.898 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:04.899 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:04.900 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:04.901 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:04.902 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:04.902 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:04.903 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:04.904 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:04.905 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:05.022 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:05.023 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:05.024 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:05.025 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:05.026 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:05.027 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:05.028 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:05.029 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:05.030 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:05.031 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:05.032 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:05.033 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:05.034 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:05.162 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:05.164 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:05.165 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:05.166 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:05.166 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:05.167 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:05.168 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:05.169 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:05.170 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:05.171 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:05.172 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:05.172 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:05.173 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:05.180 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:56:05.181 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:05.182 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:05.183 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:56:05.183 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:56:05.183 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:56:05.193 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:56:05.194 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:05.194 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:05.197 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:56:05.198 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:05.198 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:05.199 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:05.199 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:05.199 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:05.199 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:05.199 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:05.372 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:05.375 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:05.377 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:05.378 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:05.379 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:05.380 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:05.382 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:05.383 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:05.384 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:05.386 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:05.390 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:05.391 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:05.393 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:05.560 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:05.561 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:05.563 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:05.564 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:05.568 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:05.570 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:05.572 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:05.575 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:05.576 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:05.578 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:05.579 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:05.580 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:05.582 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:05.746 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:05.748 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:05.749 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:05.753 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:05.756 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:05.757 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:05.758 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:05.759 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:05.760 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:05.761 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:05.762 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:05.764 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:05.765 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:05.774 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:56:05.775 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:05.776 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:05.778 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:56:05.778 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:56:05.778 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:56:05.782 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:56:05.783 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:05.783 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:05.786 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:05.786 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]
+21:56:05.937 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:05.938 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:05.940 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:05.941 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:05.942 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:05.943 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:05.944 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:05.945 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:05.946 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:05.947 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:05.948 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:05.949 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:05.950 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:06.041 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:06.043 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:06.044 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:06.047 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:06.049 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:06.050 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:06.054 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:06.059 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:06.060 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:06.061 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:06.062 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:06.063 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:06.064 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:06.165 [main] DEBUG org.hibernate.SQL - drop table if exists event
+21:56:06.166 [main] DEBUG org.hibernate.SQL - drop table if exists EventType
+21:56:06.168 [main] DEBUG org.hibernate.SQL - drop table if exists hibernate_sequence
+21:56:06.168 [main] DEBUG org.hibernate.SQL - drop table if exists location
+21:56:06.170 [main] DEBUG org.hibernate.SQL - drop table if exists participant
+21:56:06.171 [main] DEBUG org.hibernate.SQL - drop table if exists participant_attends_event
+21:56:06.172 [main] DEBUG org.hibernate.SQL - create table event (event_status varchar(31) not null, id_event bigint not null, cost double not null, date datetime, description varchar(255), name varchar(255), id_event_type bigint, id_location bigint, primary key (id_event))
+21:56:06.173 [main] DEBUG org.hibernate.SQL - create table EventType (id_event_type bigint not null, name varchar(255), primary key (id_event_type))
+21:56:06.174 [main] DEBUG org.hibernate.SQL - create table hibernate_sequence (next_val bigint)
+21:56:06.175 [main] DEBUG org.hibernate.SQL - insert into hibernate_sequence values ( 1 )
+21:56:06.176 [main] DEBUG org.hibernate.SQL - create table location (id_location bigint not null, latitude varchar(255), longitude varchar(255), name varchar(255), primary key (id_location))
+21:56:06.177 [main] DEBUG org.hibernate.SQL - create table participant (id_participant bigint not null, name varchar(255), primary key (id_participant))
+21:56:06.178 [main] DEBUG org.hibernate.SQL - create table participant_attends_event (id_event bigint not null, id_participant bigint not null)
+21:56:06.185 [main] DEBUG org.hibernate.SQL - select eventtype0_.id_event_type as id_event1_1_, eventtype0_.name as name2_1_ from EventType eventtype0_ where eventtype0_.name='lab'
+21:56:06.186 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:06.186 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:06.188 [main] DEBUG org.hibernate.SQL - insert into EventType (name, id_event_type) values (?, ?)
+21:56:06.188 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [lab]
+21:56:06.188 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+21:56:06.193 [main] DEBUG org.hibernate.SQL - select event0_.id_event as id_event2_0_, event0_.cost as cost3_0_, event0_.date as date4_0_, event0_.description as descript5_0_, event0_.id_event_type as id_event7_0_, event0_.id_location as id_locat8_0_, event0_.name as name6_0_, event0_.event_status as event_st1_0_ from event event0_ where event0_.name='SENG301 Lab'
+21:56:06.194 [main] DEBUG org.hibernate.SQL - select next_val as id_val from hibernate_sequence
+21:56:06.194 [main] DEBUG org.hibernate.SQL - update hibernate_sequence set next_val= ? where next_val=?
+21:56:06.196 [main] DEBUG org.hibernate.SQL - insert into event (cost, date, description, id_event_type, id_location, name, event_status, id_event) values (?, ?, ?, ?, ?, ?, 'SCHEDULED', ?)
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [DOUBLE] - [0.0]
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [TIMESTAMP] - [Tue Jun 08 00:00:00 NZST 2021]
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Let's learn some patterns]
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [null]
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [SENG301 Lab]
+21:56:06.196 [main] TRACE org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [7] as [BIGINT] - [2]

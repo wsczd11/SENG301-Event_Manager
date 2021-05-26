@@ -6,11 +6,11 @@
 
 ### Feature file (Cucumber Scenarios)
 
-**NAME OF FEATURE FILE**
+**participant.feature**
 
 ### Java class implementing the acceptance tests
 
-**NAME OF JAVA FILE**
+**AddParticipantsFeature**
 
 ## Task 2 - Identify the patterns in the code
 

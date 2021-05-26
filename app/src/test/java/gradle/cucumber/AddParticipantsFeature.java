@@ -15,6 +15,7 @@ import uc.seng301.eventapp.handler.EventHandlerImpl;
 import uc.seng301.eventapp.model.Event;
 import uc.seng301.eventapp.model.Participant;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AddParticipantsFeature {
@@ -25,7 +26,8 @@ public class AddParticipantsFeature {
 
     private Event event;
     private Long eventId;
-    private Participant  participant;
+    private Participant participant;
+    private List<Participant> participants;
 
     @Before
     public void setup() {
@@ -38,7 +40,7 @@ public class AddParticipantsFeature {
     }
 
     //
-    // U3 - AC1
+    // Background
     //
 
     @Given("There is one event with name {string}, description {string}, type {string} and date {string}")
@@ -48,7 +50,11 @@ public class AddParticipantsFeature {
         eventId = eventAccessor.persistEvent(event);
     }
 
-    @And("There is a participant with name {string}")
+    //
+    // U3 - AC1
+    //
+
+    @Given("There is a participant with name {string}")
     public void there_is_a_participant_with_name(String name) {
         Assertions.assertNull(participantAccessor.getParticipantByName(name));
         participant = new Participant(name);
@@ -69,9 +75,9 @@ public class AddParticipantsFeature {
         List<Participant> participants = anEvent.getParticipants();
 
         boolean flag = false;
-        for (Participant anParticipant: participants){
+        for (Participant anParticipant : participants) {
             System.out.println(anParticipant.getName());
-            if (anParticipant.getName().equals(name)){
+            if (anParticipant.getName().equals(name)) {
                 flag = true;
             }
         }
@@ -82,7 +88,7 @@ public class AddParticipantsFeature {
     // U3 - AC2
     //
 
-    @And("There is no participant with name {string}")
+    @Given("There is no participant with name {string}")
     public void there_is_no_participant_with_name(String name) {
         participant = participantAccessor.getParticipantByName(name);
         Assertions.assertNull(participant);
@@ -98,15 +104,24 @@ public class AddParticipantsFeature {
     // U3 - AC3
     //
 
-    @When("I add not exist participants {string} and {string} to Event {string}")
-    public void i_add_not_exist_participants_and_to_event(String string, String string2, String string3) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Given("A list of participant")
+    public void a_list_of_participant() {
+        participants = new ArrayList<>();
     }
 
-    @Then("The participant {string} has not been add to event {string}")
-    public void the_participant_has_not_been_add_to_event(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("I do not add any participant into list")
+    public void i_do_not_add_any_participant_into_list() {
+        Assertions.assertEquals(0, participants.size());
+    }
+
+    @When("I do add a participant {string} into list")
+    public void i_do_add_a_participant_into_list(String name) {
+        participants.add(new Participant(name));
+    }
+
+    @Then("I expect an exception that disallow me to add participants")
+    public void i_expect_an_exception_that_disallow_me_to_add_participants() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                eventHandler.addParticipants(event, participants));
     }
 }

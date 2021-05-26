@@ -8,10 +8,10 @@ uc/seng301/eventapp/location/LocationService.java
  uc.seng301.eventapp.location.LocationService
 uc/seng301/eventapp/model/Location.java
  uc.seng301.eventapp.model.Location
-uc/seng301/eventapp/accessor/EventAccessor.java
- uc.seng301.eventapp.accessor.EventAccessor
-uc/seng301/eventapp/App.java
- uc.seng301.eventapp.App
+uc/seng301/eventapp/model/EventStatus.java
+ uc.seng301.eventapp.model.EventStatus
+uc/seng301/eventapp/model/ScheduledEvent.java
+ uc.seng301.eventapp.model.ScheduledEvent
 uc/seng301/eventapp/model/PastEvent.java
  uc.seng301.eventapp.model.PastEvent
 uc/seng301/eventapp/location/NominatimResult.java
@@ -24,16 +24,16 @@ uc/seng301/eventapp/handler/EventHandler.java
  uc.seng301.eventapp.handler.EventHandler
 uc/seng301/eventapp/model/EventType.java
  uc.seng301.eventapp.model.EventType
-uc/seng301/eventapp/handler/EventHandlerImpl.java
- uc.seng301.eventapp.handler.EventHandlerImpl
- uc.seng301.eventapp.handler.EventHandlerImpl$1
+uc/seng301/eventapp/model/ArchivedEvent.java
+ uc.seng301.eventapp.model.ArchivedEvent
 uc/seng301/eventapp/util/DateUtil.java
  uc.seng301.eventapp.util.DateUtil
 uc/seng301/eventapp/location/LocationServiceResult.java
  uc.seng301.eventapp.location.LocationServiceResult
-uc/seng301/eventapp/model/ArchivedEvent.java
- uc.seng301.eventapp.model.ArchivedEvent
-uc/seng301/eventapp/model/ScheduledEvent.java
- uc.seng301.eventapp.model.ScheduledEvent
-uc/seng301/eventapp/model/EventStatus.java
- uc.seng301.eventapp.model.EventStatus
+uc/seng301/eventapp/accessor/EventAccessor.java
+ uc.seng301.eventapp.accessor.EventAccessor
+uc/seng301/eventapp/App.java
+ uc.seng301.eventapp.App
+uc/seng301/eventapp/handler/EventHandlerImpl.java
+ uc.seng301.eventapp.handler.EventHandlerImpl
+ uc.seng301.eventapp.handler.EventHandlerImpl$1
