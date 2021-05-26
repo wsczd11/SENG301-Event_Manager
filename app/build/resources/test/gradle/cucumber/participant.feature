@@ -29,15 +29,15 @@ Feature: U3 - Add participant to event
 
   Scenario: AC1 - I can add one existing participant to an event by its name (non-empty).
     Given There is one event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/06/2021"
-    Given There is a participant with name "Erica"
+    And There is a participant with name "Erica"
     When I add this participant to the given event
     Then The participant "Erica" has been add to event "SENG301 Lab"
 
   Scenario: AC2 - I can add one participant that does not exist yet. This participant will be created as a side effect with given non-empty name.
-    Given There is an event with name "SENG301 Asg 3", description "Let's learn some patterns", type "assignment" and date "07/06/2021"
-    Given There is no participant with name "Erica"
-    When I add a not exist participant "Erica" to Event "SENG301 Asg 3"
-    Then The participant "Erica" has been add to event "SENG301 Asg 3"
+    Given There is one event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/06/2021"
+    And There is no participant with name "Erica"
+    When I add a not exist participant "Erica" to the given event
+    Then The participant "Erica" has been add to event "SENG301 Lab"
 
 #  AC.3 I cannot add empty participants, or participants with names containing invalid characters (e.g., numbers).
   Scenario: AC3 - The name of participant must not be empty

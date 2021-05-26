@@ -1,6 +1,7 @@
 package gradle.cucumber;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -45,11 +46,9 @@ public class AddParticipantsFeature {
                                                                       String date) {
         event = eventHandler.createEvent(name, description, date, type);
         eventId = eventAccessor.persistEvent(event);
-//        event = eventAccessor.getEventById(eventId);
-//        Assertions.assertNotNull(event);
     }
 
-    @Given("There is a participant with name {string}")
+    @And("There is a participant with name {string}")
     public void there_is_a_participant_with_name(String name) {
         Assertions.assertNull(participantAccessor.getParticipantByName(name));
         participant = new Participant(name);
@@ -60,7 +59,6 @@ public class AddParticipantsFeature {
     @When("I add this participant to the given event")
     public void i_add_this_participant_to_the_given_event() {
         event.addParticipant(participant);
-//        eventHandler.addParticipants(event, List.of(participant));
         eventAccessor.persistEventAndParticipants(event);
     }
 
@@ -84,16 +82,16 @@ public class AddParticipantsFeature {
     // U3 - AC2
     //
 
-    @Given("There is no participant with name {string}")
-    public void there_is_no_participant_with_name(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @And("There is no participant with name {string}")
+    public void there_is_no_participant_with_name(String name) {
+        participant = participantAccessor.getParticipantByName(name);
+        Assertions.assertNull(participant);
     }
 
-    @When("I add a not exist participant {string} to Event {string}")
-    public void i_add_a_not_exist_participant_to_event(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("I add a not exist participant {string} to the given event")
+    public void i_add_a_not_exist_participant_to_event(String name) {
+        event.addParticipant(new Participant(name));
+        eventAccessor.persistEventAndParticipants(event);
     }
 
     //
