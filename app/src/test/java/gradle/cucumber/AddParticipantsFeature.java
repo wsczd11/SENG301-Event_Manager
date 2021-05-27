@@ -64,19 +64,19 @@ public class AddParticipantsFeature {
 
     @When("I add this participant to the given event")
     public void i_add_this_participant_to_the_given_event() {
-        event.addParticipant(participant);
-        eventAccessor.persistEventAndParticipants(event);
+//        event.addParticipant(participant);
+//        eventAccessor.persistEventAndParticipants(event);
+        eventHandler.addParticipants(event, List.of(participant));
     }
 
     @Then("The participant {string} has been add to event {string}")
     public void the_participant_has_been_add_to_event(String name, String eventName) {
-        Event anEvent = eventAccessor.getEventAndParticipantsById(eventId);
-        Assertions.assertEquals(anEvent.getName(), eventName);
-        List<Participant> participants = anEvent.getParticipants();
+//        Event event = eventAccessor.getEventAndParticipantsById(eventId);
+        Assertions.assertEquals(event.getName(), eventName);
+        List<Participant> participants = event.getParticipants();
 
         boolean flag = false;
         for (Participant anParticipant : participants) {
-            System.out.println(anParticipant.getName());
             if (anParticipant.getName().equals(name)) {
                 flag = true;
             }
@@ -96,16 +96,17 @@ public class AddParticipantsFeature {
 
     @When("I add a not exist participant {string} to the given event")
     public void i_add_a_not_exist_participant_to_event(String name) {
-        event.addParticipant(new Participant(name));
-        eventAccessor.persistEventAndParticipants(event);
+//        event.addParticipant(new Participant(name));
+//        eventAccessor.persistEventAndParticipants(event);
+        eventHandler.addParticipants(event, List.of(new Participant(name)));
     }
 
     //
     // U3 - AC3
     //
 
-    @Given("A list of participant")
-    public void a_list_of_participant() {
+    @Given("A empty list for participant")
+    public void a_empty_list_for_participant() {
         participants = new ArrayList<>();
     }
 
@@ -116,12 +117,12 @@ public class AddParticipantsFeature {
 
     @When("I do add a participant {string} into list")
     public void i_do_add_a_participant_into_list(String name) {
-        participants.add(new Participant(name));
+        eventHandler.addParticipants(event, List.of(new Participant(name)));
+//        participants.add(new Participant(name));
     }
 
-    @Then("I expect an exception that disallow me to add participants")
-    public void i_expect_an_exception_that_disallow_me_to_add_participants() {
-        Assertions.assertThrows(IllegalArgumentException.class, () ->
-                eventHandler.addParticipants(event, participants));
+    @Then("No participant has been add to given event")
+    public void no_participant_has_been_add_to_given_event() {
+        Assertions.assertEquals(0, participants.size());
     }
 }

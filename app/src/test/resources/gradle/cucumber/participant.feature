@@ -41,21 +41,21 @@ Feature: U3 - Add participant to event
     Then The participant "Erica" has been add to event "SENG301 Lab"
 
   Scenario: AC3 - I cannot add empty participants
-    Given A list of participant
+    Given A empty list for participant
     When I do not add any participant into list
-    Then I expect an exception that disallow me to add participants
+    Then No participant has been add to given event
 
   Scenario: AC3 - The name of participant must not contain any number
-    Given A list of participant
+    Given A empty list for participant
     When I do add a participant "Erica123" into list
-    Then I expect an exception that disallow me to add participants
+    Then No participant has been add to given event
 
   Scenario: AC3 - The name of participant must not contain any symbol
-    Given A list of participant
+    Given A empty list for participant
     When I do add a participant "Erica!!!" into list
-    Then I expect an exception that disallow me to add participants
+    Then No participant has been add to given event
 
   Scenario: AC3 - The name of participant must not only contain space
-    Given A list of participant
+    Given A empty list for participant
     When I do add a participant "   " into list
-    Then I expect an exception that disallow me to add participants
+    Then No participant has been add to given event
