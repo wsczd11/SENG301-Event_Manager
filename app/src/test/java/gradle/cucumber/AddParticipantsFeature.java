@@ -24,10 +24,12 @@ public class AddParticipantsFeature {
     private EventHandler eventHandler;
     private ParticipantAccessor participantAccessor;
 
-    private Event event;
+    private Event givenEvent;
+    private Event retrieveEvent;
     private Long eventId;
     private Participant participant;
-    private List<Participant> participants;
+    private List<Participant> givenParticipants;
+    private List<Participant> retrieveParticipants;
 
     @Before
     public void setup() {
@@ -46,8 +48,8 @@ public class AddParticipantsFeature {
     @Given("There is one event with name {string}, description {string}, type {string} and date {string}")
     public void there_is_an_event_with_name_description_type_and_date(String name, String description, String type,
                                                                       String date) {
-        event = eventHandler.createEvent(name, description, date, type);
-        eventId = eventAccessor.persistEvent(event);
+        givenEvent = eventHandler.createEvent(name, description, date, type);
+        eventId = eventAccessor.persistEvent(givenEvent);
     }
 
     //
@@ -64,16 +66,16 @@ public class AddParticipantsFeature {
 
     @When("I add this participant to the given event")
     public void i_add_this_participant_to_the_given_event() {
-//        event.addParticipant(participant);
-//        eventAccessor.persistEventAndParticipants(event);
-        eventHandler.addParticipants(event, List.of(participant));
+        eventHandler.addParticipants(givenEvent, List.of(participant));
+        Long newEventId = eventAccessor.persistEventAndParticipants(givenEvent);
+        Assertions.assertTrue(newEventId == eventId);
     }
 
     @Then("The participant {string} has been add to event {string}")
     public void the_participant_has_been_add_to_event(String name, String eventName) {
-//        Event event = eventAccessor.getEventAndParticipantsById(eventId);
-        Assertions.assertEquals(event.getName(), eventName);
-        List<Participant> participants = event.getParticipants();
+        retrieveEvent = eventAccessor.getEventAndParticipantsById(eventId);
+        Assertions.assertEquals(retrieveEvent.getName(), eventName);
+        List<Participant> participants = retrieveEvent.getParticipants();
 
         boolean flag = false;
         for (Participant anParticipant : participants) {
@@ -96,33 +98,36 @@ public class AddParticipantsFeature {
 
     @When("I add a not exist participant {string} to the given event")
     public void i_add_a_not_exist_participant_to_event(String name) {
-//        event.addParticipant(new Participant(name));
-//        eventAccessor.persistEventAndParticipants(event);
-        eventHandler.addParticipants(event, List.of(new Participant(name)));
+        eventHandler.addParticipants(givenEvent, List.of(new Participant(name)));
+        Long newEventId = eventAccessor.persistEventAndParticipants(givenEvent);
+        Assertions.assertTrue(newEventId == eventId);
     }
 
     //
     // U3 - AC3
     //
 
-    @Given("A empty list for participant")
-    public void a_empty_list_for_participant() {
-        participants = new ArrayList<>();
+    @Given("A empty list for participants")
+    public void a_empty_list_for_participants() {
+        givenParticipants = new ArrayList<>();
     }
 
-    @When("I do not add any participant into list")
-    public void i_do_not_add_any_participant_into_list() {
-        Assertions.assertEquals(0, participants.size());
+    @And("add a participant {string} to given list")
+    public void add_a_participant_to_given_list(String name) {
+        givenParticipants.add(new Participant(name));
     }
 
-    @When("I do add a participant {string} into list")
-    public void i_do_add_a_participant_into_list(String name) {
-        eventHandler.addParticipants(event, List.of(new Participant(name)));
-//        participants.add(new Participant(name));
+    @When("I add given list of participants into event")
+    public void i_add_given_list_of_participants_into_event() {
+        eventHandler.addParticipants(givenEvent, givenParticipants);
+        Long newEventId = eventAccessor.persistEventAndParticipants(givenEvent);
+        Assertions.assertTrue(newEventId == eventId);
     }
 
     @Then("No participant has been add to given event")
     public void no_participant_has_been_add_to_given_event() {
-        Assertions.assertEquals(0, participants.size());
+        retrieveEvent = eventAccessor.getEventAndParticipantsById(eventId);
+        retrieveParticipants = retrieveEvent.getParticipants();
+        Assertions.assertEquals(0, retrieveParticipants.size());
     }
 }

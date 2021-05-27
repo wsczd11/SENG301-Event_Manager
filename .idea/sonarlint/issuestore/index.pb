@@ -45,8 +45,6 @@ o
 ?app/src/main/java/uc/seng301/eventapp/model/ScheduledEvent.java,7/6/760e6127ced7ae210596a4da966846a43850120e
 n
 >app/src/main/java/uc/seng301/eventapp/model/ArchivedEvent.java,d/2/d24d3f89a94ddd146c8b32e07926f944e2c62b85
-f
-6app/src/main/java/uc/seng301/eventapp/model/Event.java,d/7/d73a7257da89b9ff90a729b77b811fe8c010a105
 l
 <app/src/main/java/uc/seng301/eventapp/model/Participant.java,d/f/df429ea842e60b8ac4354a13897ff508f7bb14a3
 w
