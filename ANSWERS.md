@@ -18,41 +18,52 @@
 
 #### What pattern is it?
 
-**YOUR ANSWER**
+**State**
 
 #### What is its goal in the code?
 
-**YOUR ANSWER**
+**Allow event have different behaviour when they have different type.**
 
 #### Name of UML Class diagram attached:
 
-**YOUR ANSWER**
+**State_UML.png**
 
 #### Mapping to GoF pattern elements:
 
 | GoF element | Code element |
 | ----------- | ------------ |
-|             |              |
+| Contest        | EventHandler        |
+| Request        | updateEventStatus() |
+| State          | Event               |
+| ConcreteStateA | ArchivedEvent       |
+| ConcreteStateB | CanceledEvent       |
+| ConcreteStateC | PastEvent           |
+| ConcreteStateD | ScheduledEvent      |
+| handle()       | toString()          |
+
 
 ### Pattern 2
 
 #### What pattern is it?
 
-**YOUR ANSWER**
+**Singleton**
 
 #### What is its goal in the code?
 
-**YOUR ANSWER**
+**Reduce memory use and resource occupation.**
 
 #### Name of UML Class diagram attached:
 
-**YOUR ANSWER**
+**Singleton_UML.png**
 
 #### Mapping to GoF pattern elements:
 
 | GoF element | Code element |
 | ----------- | ------------ |
-|             |              |
+| Singleton      | DateUtil      |
+| uniqueInstance | instance      |
+| instance()     | getInstance() |
+| Singleton()    | DateUtil()    |
 
 ## Task 3 - Full UML Class diagram
 

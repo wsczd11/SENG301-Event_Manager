@@ -5,14 +5,6 @@
 app/.project,1/7/17c0bfa41a9137402c51952eac53aea44922f9bc
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
-n
->app/src/main/java/uc/seng301/eventapp/model/CanceledEvent.java,2/2/22d14193cc7ccca867cab2384e57e8adb742ded7
-h
-8app/src/main/java/uc/seng301/eventapp/util/DateUtil.java,1/3/136e41a93389cd66d0f0df18c5109d35ed4d0073
-l
-<app/src/main/java/uc/seng301/eventapp/model/EventStatus.java,2/1/21666b4f5ac0037adf129a87939cab0a0692e07f
-j
-:app/src/main/java/uc/seng301/eventapp/model/EventType.java,d/2/d2731f2d021cb8ee6c3e7e9e65059689ef2bd89f
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 7
@@ -41,13 +33,5 @@ N
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 i
 9app/src/test/java/gradle/cucumber/AddLocationFeature.java,a/8/a8b15534f8a6b92e0d14c8b3d83cf60a40db2684
-o
-?app/src/main/java/uc/seng301/eventapp/model/ScheduledEvent.java,7/6/760e6127ced7ae210596a4da966846a43850120e
-n
->app/src/main/java/uc/seng301/eventapp/model/ArchivedEvent.java,d/2/d24d3f89a94ddd146c8b32e07926f944e2c62b85
-l
-<app/src/main/java/uc/seng301/eventapp/model/Participant.java,d/f/df429ea842e60b8ac4354a13897ff508f7bb14a3
-w
-Gapp/src/main/java/uc/seng301/eventapp/accessor/ParticipantAccessor.java,3/6/36a6c1f21d318cc1e604f31334770159a121db95
 N
 app/log/other-2021-05-26-1.log,3/6/3664949e7748e3cdc0e95dcf36fea65033b4ad0c
