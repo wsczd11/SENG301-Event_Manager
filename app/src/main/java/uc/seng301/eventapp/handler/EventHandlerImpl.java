@@ -36,26 +36,15 @@ public class EventHandlerImpl implements EventHandler {
       throw new IllegalArgumentException("event or participant list is null");
     }
 
-    // check empty
-//    if (participants.isEmpty()){
-//      throw new IllegalArgumentException("participant list is empty");
-//    }
-
     for (Participant participant : participants) {
       if (null == participant) {
         throw new IllegalArgumentException("one of the participant is null");
       }
 
-      // check name with only space
-      if (participant.getName().replace(" ", "").length() == 0){
+      // check name with only space and check name can only be characters and space
+      if (participant.getName().replace(" ", "").length() == 0 ||
+              !participant.getName().matches("^[a-zA-Z ]+$")){
         continue;
-//        throw new IllegalArgumentException("one of the participant contain only spaces");
-      }
-
-      // check name can only be characters and space
-      if (!participant.getName().matches("^[a-zA-Z ]+$")){
-        continue;
-//        throw new IllegalArgumentException("one of the participant contain invalid characters");
       }
 
       if (event.getParticipants().stream().noneMatch(p -> p.getName().equals(participant.getName()))) {

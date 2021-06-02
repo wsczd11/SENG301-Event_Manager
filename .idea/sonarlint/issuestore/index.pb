@@ -15,14 +15,6 @@ X
 LICENSE.txt,7/9/79b82ce9b64a924266619555502f890dd80c83b9
 i
 9app/src/main/java/uc/seng301/eventapp/model/Location.java,a/d/ad629f7db58d98194291a8b9be4a2a7f062642fb
-s
-Capp/src/main/java/uc/seng301/eventapp/location/LocationService.java,8/3/83cfd198199025e637b348ac4dbb48b7d922852f
-y
-Iapp/src/main/java/uc/seng301/eventapp/location/LocationServiceResult.java,b/3/b38ce4f2f2921633af86fd43a2e37955274b7e64
-r
-Bapp/src/main/java/uc/seng301/eventapp/location/NominatimQuery.java,c/2/c2d7b22c1ed5fbb077e788728d27791412e0bd6c
-s
-Capp/src/main/java/uc/seng301/eventapp/location/NominatimResult.java,0/0/0002a0c964a4c96af4a9983693cafdcb4834174c
 ^
 .app/.settings/org.eclipse.buildship.core.prefs,3/8/382761f865b04589d07608ffe39e3a93e444130d
 N
