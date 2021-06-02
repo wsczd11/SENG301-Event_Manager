@@ -32,7 +32,7 @@
 
 | GoF element | Code element |
 | ----------- | ------------ |
-| Contest        | EventHandler        |
+| Contest        | EventHandlerImpl    |
 | Request        | updateEventStatus() |
 | State          | Event               |
 | ConcreteStateA | ArchivedEvent       |
@@ -46,11 +46,11 @@
 
 #### What pattern is it?
 
-**Singleton**
+**Factory Method**
 
 #### What is its goal in the code?
 
-**Reduce memory use and resource occupation.**
+**User can creat an event without know the process of create a user.**
 
 #### Name of UML Class diagram attached:
 
@@ -60,10 +60,11 @@
 
 | GoF element | Code element |
 | ----------- | ------------ |
-| Singleton      | DateUtil      |
-| uniqueInstance | instance      |
-| instance()     | getInstance() |
-| Singleton()    | DateUtil()    |
+| AbstractCreator | EventHandler     |
+| ConcreteCreator | EventHandlerImpl |
+| AbstractProduct | Event            |
+| ConcreteProduct | ScheduledEvent   |
+| FactoryMethod   | createEvent()    |
 
 ## Task 3 - Full UML Class diagram
 
