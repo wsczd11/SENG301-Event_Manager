@@ -70,7 +70,7 @@
 
 ### Name of file of full UML Class diagram attached
 
-**YOUR ANSWER**
+**Full_UML.png**
 
 ## Task 4 - Implement new feature
 
