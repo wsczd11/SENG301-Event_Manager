@@ -76,21 +76,28 @@
 
 ### What pattern fulfils the need for the feature?
 
-**YOUR ANSWER**
+**Observer Pattern**
 
 ### What is its goal and why is it needed here?
 
-**YOUR ANSWER**
+**Send a notice to observer when the subject been update. The reason of I use it here is that the individual user can get notice when Event change status.**
 
 ### Name of UML Class diagram attached:
 
-**YOUR ANSWER**
+**Observer_UML.png**
 
 ### Mapping to GoF pattern elements:
 
 | GoF element | Code element |
 | ----------- | ------------ |
-|             |              |
+| Subject                                        | Event                                                   |
+| Observer                                       | Participant                                             |
+| Concrete Subject                               | ArchivedEvent, CanceledEvent, PastEvent, ScheduledEvent |
+| Concrete Observer                              | Participant                                             |
+| doSomething()                                  | cancel(), happen(), reschedule(), archive()             |
+| getter()                                       | toString()                                              |
+| subject - Observer Relations                   | Association                                             |
+| Concrete subject - Concrete Observer Relations | Association                                             |
 
 ## Task 5 - BONUS - Acceptance tests for Task 4
 
