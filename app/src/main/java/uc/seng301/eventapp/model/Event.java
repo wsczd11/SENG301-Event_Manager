@@ -313,7 +313,7 @@ public abstract class Event {
   public void sendNotification(Event event){
     String newStatus = event.toString().split("[ ]")[0];
     for (Participant participant: participants){
-      participant.printMessage(event.getName(), newStatus);
+      System.out.println(participant.printMessage(event.getName(), newStatus));
     }
   }
 

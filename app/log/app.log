@@ -2423,3 +2423,325 @@
 12:37:15.248 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
 12:37:15.249 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
 12:37:15.250 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+12:53:36.967 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+12:53:37.056 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+12:53:37.069 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+12:53:37.072 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+12:53:37.075 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+12:53:37.078 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+12:53:37.081 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+12:53:37.084 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+12:56:11.354 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+12:56:11.395 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+12:56:11.411 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+12:56:11.417 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+12:56:41.821 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+12:56:41.950 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+12:56:52.813 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+12:56:52.814 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='bb', events='[]'}: true
+12:56:52.844 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+12:56:52.845 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}, { participantId='null', name='bb', events='[]'}]
+12:56:52.845 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}, { participantId='null', name='bb', events='[]'}]
+12:56:52.845 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+12:56:52.859 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+12:56:52.860 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+12:56:52.870 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='bb', events='[]'}
+12:56:52.870 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name bb
+12:56:52.874 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+12:57:06.836 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 4 (with its participants)
+12:57:36.920 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:4 to status 'SCHEDULED'
+12:59:33.235 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+12:59:33.357 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+12:59:55.243 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+12:59:55.272 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+12:59:55.272 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa1', events='[]'}, { participantId='null', name='aa', events='[]'}]
+12:59:55.272 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+12:59:55.272 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+12:59:55.287 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+12:59:55.287 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+12:59:55.293 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:00:22.304 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:00:22.309 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:00:22.331 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:00:22.334 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:00:22.338 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:00:22.349 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:00:22.352 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:00:22.355 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:02:04.604 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 4 (with its participants)
+13:05:35.333 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:05:35.454 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:05:48.321 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+13:05:48.348 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+13:05:48.348 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:05:48.348 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:05:48.348 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:05:48.361 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+13:05:48.362 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+13:05:48.367 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:05:59.340 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:06:11.373 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='bb', events='[]'}: true
+13:06:11.374 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='3', name='a', description='a', cost='0.0', date='2021-10-10 00:00:00.0', eventType='{ eventTypeId='1', name='a'}', location='null'}
+13:06:11.374 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='bb', events='[]'}]
+13:06:11.374 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='2', name='aa', events='[SCHEDULED { eventId='3', name='a', description='a', cost='0.0', date='2021-10-10 00:00:00.0', eventType='{ eventTypeId='1', name='a'}', location='null'}]'}, { participantId='null', name='bb', events='[]'}]
+13:06:11.381 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='bb', events='[]'}
+13:06:11.381 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name bb
+13:06:11.387 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:06:15.385 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:06:15.390 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:06:15.393 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:06:15.398 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:06:15.409 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:06:15.412 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:06:15.415 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:06:15.418 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:06:46.476 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 1 (with its participants)
+13:07:50.665 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:08:06.707 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:13:08.695 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:13:08.811 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:13:18.674 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+13:13:18.702 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+13:13:18.702 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:13:18.702 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:13:18.702 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:13:18.717 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+13:13:18.717 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+13:13:18.722 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:13:24.682 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:13:28.693 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'PAST'
+13:13:33.703 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:13:37.717 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:13:49.756 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:13:49.757 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:13:58.781 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:13:58.785 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:13:58.791 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:13:58.795 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:13:58.799 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:13:58.803 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:13:58.806 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:13:58.811 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:14:56.429 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:14:56.554 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:14:59.375 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:14:59.383 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:15:01.382 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:15:01.387 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:15:01.391 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:15:01.435 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:15:01.438 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:15:01.441 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:15:01.444 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:15:01.447 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:15:08.401 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:15:12.411 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'PAST'
+13:15:12.414 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:15:17.425 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 1 (with its participants)
+13:16:02.544 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:16:12.570 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'SCHEDULED'
+13:16:12.571 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:16:15.576 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:16:15.577 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:16:15.579 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:16:15.583 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:16:15.584 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:16:15.585 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:16:15.586 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:16:15.587 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:16:34.627 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:16:38.637 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'PAST'
+13:16:38.638 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:16:42.650 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:16:42.650 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:16:42.652 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:16:42.653 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:16:42.654 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:16:42.657 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:16:42.658 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:16:42.659 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:16:49.667 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:16:54.687 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'SCHEDULED'
+13:21:29.465 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 4 (with its participants)
+13:25:23.853 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:25:23.966 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:25:34.836 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+13:25:34.864 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+13:25:34.865 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:25:34.865 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:25:34.865 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:25:34.877 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+13:25:34.877 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+13:25:34.881 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:25:37.833 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:25:37.837 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:25:37.841 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:25:37.861 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:25:37.864 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:25:37.868 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:25:37.871 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:25:37.874 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:25:44.855 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 1 (with its participants)
+13:25:50.873 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:26:01.913 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:26:07.926 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:26:07.926 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:26:07.927 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:26:07.933 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:26:07.934 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:26:07.935 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:26:07.936 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:26:07.937 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:26:24.978 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:26:30.000 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:35:00.724 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:35:00.829 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:35:12.708 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+13:35:12.736 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+13:35:12.736 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:35:12.736 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:35:12.737 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:35:12.749 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+13:35:12.750 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+13:35:12.754 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:35:21.723 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 1 (with its participants)
+13:36:12.850 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:36:25.881 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:36:32.899 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:36:57.973 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:38:15.191 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:38:20.206 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'ARCHIVED'
+13:38:43.267 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:38:43.272 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:38:43.276 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:38:43.283 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:38:43.286 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:38:43.292 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:38:43.295 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:38:43.299 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:38:52.290 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:38:52.290 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:38:52.292 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:38:52.296 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:38:52.297 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:38:52.301 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:38:52.302 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:38:52.304 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:39:03.325 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:39:21.368 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:39:44.417 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:39:55.452 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:40:05.473 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:40:17.506 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:40:34.560 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:40:38.572 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:42:36.423 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:42:36.543 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:42:47.402 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='aa', events='[]'}: true
+13:42:47.431 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='0.0', date='Sun Oct 10 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+13:42:47.431 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:42:47.431 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='aa', events='[]'}]
+13:42:47.431 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:42:47.445 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='aa', events='[]'}
+13:42:47.445 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name aa
+13:42:47.450 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:42:55.416 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:43:56.617 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:44:02.629 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'PAST'
+13:44:06.635 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:44:10.651 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:44:10.656 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:44:10.660 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:44:10.663 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:44:10.667 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:44:10.672 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:44:10.675 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:44:10.679 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:44:26.704 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 4 (with its participants)
+13:44:31.718 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:44:35.728 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:44:53.770 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:44:59.796 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:3 to status 'SCHEDULED'
+13:45:59.473 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:45:59.615 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:46:02.421 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:46:02.429 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:46:07.437 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:46:11.444 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:46:20.468 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'SCHEDULED'
+13:47:19.468 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name '1'
+13:47:19.567 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:47:21.418 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:47:21.426 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:47:25.432 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:55:06.462 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+13:55:06.585 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:55:08.411 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:55:08.419 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:55:11.421 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+13:55:11.425 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+13:55:11.430 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+13:55:11.434 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+13:55:11.437 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+13:55:11.476 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+13:55:11.480 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+13:55:11.483 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+13:55:15.436 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:55:30.476 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:56:01.561 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:56:23.614 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'SCHEDULED'
+13:56:35.651 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+13:58:33.538 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 3 (with its participants)
+13:58:52.533 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name '1'
+13:58:52.563 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+13:58:54.538 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+13:58:54.547 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+13:58:59.557 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+14:11:32.415 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+14:11:32.545 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+14:11:35.363 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+14:11:35.371 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+14:12:38.533 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+14:12:48.558 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'ARCHIVED'
+14:18:29.378 [main] INFO  uc.seng301.eventapp.App - querying all managed entities in database
+14:18:29.477 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ArchivedEvent'
+14:18:29.490 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from ScheduledEvent'
+14:18:29.493 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Participant'
+14:18:29.495 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from Location'
+14:18:29.498 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from PastEvent'
+14:18:29.500 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from EventType'
+14:18:29.503 [main] INFO  uc.seng301.eventapp.App - executing HQL query 'from CanceledEvent'
+14:18:46.355 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+14:18:46.390 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+14:19:00.409 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='a', events='[]'}: true
+14:19:00.409 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='b', events='[]'}: true
+14:19:00.410 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - added { participantId='null', name='c', events='[]'}: true
+14:19:00.440 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='a', description='a', cost='1.0', date='Thu Nov 11 00:00:00 NZDT 2021', eventType='{ eventTypeId='1', name='a'}', location='null'}
+14:19:00.441 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='12', events='[]'}, { participantId='null', name='2', events='[]'}, { participantId='null', name='3', events='[]'}, { participantId='null', name='4', events='[]'}, { participantId='null', name='a', events='[]'}, { participantId='null', name='b', events='[]'}, { participantId='null', name='c', events='[]'}]
+14:19:00.441 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='a', events='[]'}, { participantId='null', name='b', events='[]'}, { participantId='null', name='c', events='[]'}]
+14:19:00.441 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+14:19:00.454 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='a', events='[]'}
+14:19:00.455 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name a
+14:19:00.465 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='b', events='[]'}
+14:19:00.466 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name b
+14:19:00.476 [main] DEBUG uc.seng301.eventapp.accessor.ParticipantAccessor - { participantId='null', name='c', events='[]'}
+14:19:00.476 [main] INFO  uc.seng301.eventapp.accessor.ParticipantAccessor - save participant with name c
+14:19:00.480 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+14:19:08.418 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 5 (with its participants)
+14:19:17.446 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:5 to status 'ARCHIVED'
+14:24:12.980 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+14:24:13.136 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+14:24:15.916 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name 'a'
+14:24:15.925 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name 'a'
+14:24:25.938 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+14:24:29.945 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'ARCHIVED'
+14:25:49.131 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)
+14:25:54.146 [main] INFO  uc.seng301.eventapp.handler.EventHandlerImpl - update status of event with id:2 to status 'ARCHIVED'
+14:30:31.511 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event type with name 'a'
+14:30:31.641 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - new event type saved with id:1
+14:30:45.518 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - SCHEDULED { eventId='null', name='3', description='as', cost='1.0', date='Tue Jan 11 00:00:00 NZDT 2022', eventType='{ eventTypeId='1', name='a'}', location='null'}
+14:30:45.526 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - [{ participantId='null', name='21312', events='[]'}]
+14:30:45.526 [main] DEBUG uc.seng301.eventapp.handler.EventHandlerImpl - []
+14:30:45.526 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with name '3'
+14:30:45.533 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - persist event with name '3'
+14:30:51.507 [main] INFO  uc.seng301.eventapp.accessor.EventAccessor - retrieve the event with id 2 (with its participants)

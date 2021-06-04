@@ -95,7 +95,7 @@
 | Concrete Subject                               | ArchivedEvent, CanceledEvent, PastEvent, ScheduledEvent |
 | Concrete Observer                              | Participant                                             |
 | doSomething()                                  | cancel(), happen(), reschedule(), archive()             |
-| getter()                                       | toString()                                              |
+| getter()                                       | sendNotification(Event event)                                              |
 | subject - Observer Relations                   | Association                                             |
 | Concrete subject - Concrete Observer Relations | Association                                             |
 

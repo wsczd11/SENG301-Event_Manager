@@ -27,10 +27,7 @@
 
 package uc.seng301.eventapp;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.zip.DataFormatException;
 
 import javax.persistence.EntityManager;
@@ -245,7 +242,13 @@ public class App {
     String eventId = cli.nextLine();
 
     if (eventId.chars().allMatch(Character::isDigit)) {
-      Event event = eventAccessor.getEventAndParticipantsById(Long.parseLong(eventId));
+      Event event;
+      try{
+        event = eventAccessor.getEventAndParticipantsById(Long.parseLong(eventId));
+      } catch (NumberFormatException e) {
+        System.out.println("Event id wrong or event id not exist.");
+        return;
+      }
       if (null != event) {
         addParticipantsToEvent(event);
         eventAccessor.persistEventAndParticipants(event);
@@ -275,10 +278,19 @@ public class App {
   private void updateEventStatusMenu() {
     System.out.println("What is the id of the event you want to update event status to?");
     String eventId = cli.nextLine();
-
+    Event event;
     if (eventId.chars().allMatch(Character::isDigit)) {
-      Event event = eventAccessor.getEventAndParticipantsById(Long.parseLong(eventId));
-      EventStatus eventStatus = null;
+      try{
+        event = eventAccessor.getEventAndParticipantsById(Long.parseLong(eventId));
+      } catch (NumberFormatException e) {
+        System.out.println(e.getMessage());
+        return;
+      }
+      if (event == null){
+        System.out.println("Wrong event id or event not exist.");
+        return;
+      }
+      EventStatus eventStatus;
       Date date = null;
 
       // @formatter:off
@@ -291,8 +303,14 @@ public class App {
               + "Your Answer: ");
       // @formatter:on
 
-      String selectedStatus = cli.nextLine();
-      switch (Integer.parseInt(selectedStatus)) {
+      Integer selectedStatus;
+      try{
+        selectedStatus = Integer.parseInt(cli.nextLine());
+      } catch (NumberFormatException e){
+        System.out.println("Input must be integer from 1 to 4");
+        return;
+      }
+      switch (selectedStatus) {
         case 1:
           eventStatus = EventStatus.ARCHIVED;
           break;
@@ -309,13 +327,31 @@ public class App {
           eventStatus = EventStatus.SCHEDULED;
           System.out.println(
                   "Enter a date for your event in " + DateUtil.getInstance().getDefaultDateFormat().toUpperCase() + " format:");
-          date = DateUtil.getInstance().convertToDate(cli.nextLine());
+          String inputDate = cli.nextLine();
+          date = DateUtil.getInstance().convertToDate(inputDate);
+          Calendar nextYear = Calendar.getInstance();
+          nextYear.add(Calendar.YEAR, 1);
+          if (date == null || date.before(new Date()) || date.after(nextYear.getTime())) {
+            System.out.println(String.format("Date '%s' does not follow expected format %s, is in the past or later than one year",
+                                              inputDate, DateUtil.getInstance().getDefaultDateFormat()));
+            return;
+          }
           break;
 
         default:
-          System.out.println("Unknown value entered");
+          System.out.println("Input must be integer from 1 to 4");
+          return;
       }
-      Event newEvent = eventHandler.updateEventStatus(event, eventStatus, date);
+      Event newEvent;
+      try {
+        newEvent = eventHandler.updateEventStatus(event, eventStatus, date);
+      } catch (IllegalStateException e) {
+        System.out.println(String.format("Current event not allow to change to %s!", eventStatus));
+        return;
+      } catch (IllegalArgumentException e) {
+        System.out.println(e.getMessage());
+        return;
+      }
 
       if (eventStatus != EventStatus.ARCHIVED) {
         List<Participant> participants = newEvent.getParticipants();
@@ -323,7 +359,7 @@ public class App {
           System.out.println(String.format("%s, do you still want to join this event? (Yes:'yes'; No:any other keys)",
                   participant.getName()));
           String answer = cli.nextLine();
-          if (answer.equals("yes")){
+          if (!answer.equals("yes")){
             newEvent.deleteOneParticipants(participant);
           }
         }

@@ -155,16 +155,16 @@ public class Participant {
   }
 
   /**
-   * set receiveEventName, receiveNewEventStatus and print a message contain info of event change
+   * set receiveEventName, receiveNewEventStatus and return a message contain info of event change
    *
    * @param eventName event's name
    * @param newStatus new status
+   * @return a message contain info of event change
    */
-  public void printMessage(String eventName, String newStatus) {
+  public String printMessage(String eventName, String newStatus) {
     receiveEventName = eventName;
     receiveNewEventStatus = newStatus;
-    System.out.println(String.format("Hi %s, the status of Event %s has been change to %s.",
-            name, receiveEventName, receiveNewEventStatus));
+    return String.format("Hi %s, the status of Event %s has been change to %s.", name, receiveEventName, receiveNewEventStatus);
   }
 
   @Override
