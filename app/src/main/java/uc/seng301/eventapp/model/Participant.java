@@ -27,8 +27,11 @@
 
 package uc.seng301.eventapp.model;
 
+import uc.seng301.eventapp.App;
+
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -59,6 +62,9 @@ public class Participant {
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "participant_attends_event", joinColumns = @JoinColumn(name = "id_participant"), inverseJoinColumns = @JoinColumn(name = "id_event"))
   private List<Event> events;
+
+  private String receiveEventName;
+  private String receiveNewEventStatus;
 
   /**
    * JPA compliant no-args constructor.
@@ -128,6 +134,37 @@ public class Participant {
    */
   public void setEvents(List<Event> events) {
     this.events = events;
+  }
+
+  /**
+   * Get the receiveEventName fot this participant
+   *
+   * @return receive event's name
+   */
+  public String getReceiveEventName() {
+    return receiveEventName;
+  }
+
+  /**
+   * Get the receiveEventName fot this participant
+   *
+   * @return receive event's new status
+   */
+  public String getReceiveNewEventStatus() {
+    return receiveNewEventStatus;
+  }
+
+  /**
+   * set receiveEventName, receiveNewEventStatus and print a message contain info of event change
+   *
+   * @param eventName event's name
+   * @param newStatus new status
+   */
+  public void printMessage(String eventName, String newStatus) {
+    receiveEventName = eventName;
+    receiveNewEventStatus = newStatus;
+    System.out.println(String.format("Hi %s, the status of Event %s has been change to %s.",
+            name, receiveEventName, receiveNewEventStatus));
   }
 
   @Override

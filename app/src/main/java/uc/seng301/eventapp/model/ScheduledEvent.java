@@ -86,11 +86,13 @@ public class ScheduledEvent extends Event {
 
   @Override
   public Event cancel() {
+    this.sendNotification(new CanceledEvent(this));
     return new CanceledEvent(this);
   }
 
   @Override
   public Event happen() {
+    this.sendNotification(new PastEvent(this));
     return new PastEvent(this);
   }
 

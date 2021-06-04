@@ -28,8 +28,10 @@
 package uc.seng301.eventapp;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.zip.DataFormatException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.metamodel.EntityType;
@@ -40,6 +42,7 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
@@ -51,6 +54,7 @@ import uc.seng301.eventapp.location.LocationService;
 import uc.seng301.eventapp.location.LocationServiceResult;
 import uc.seng301.eventapp.location.NominatimQuery;
 import uc.seng301.eventapp.model.Event;
+import uc.seng301.eventapp.model.EventStatus;
 import uc.seng301.eventapp.model.Location;
 import uc.seng301.eventapp.model.Participant;
 import uc.seng301.eventapp.util.DateUtil;
@@ -197,7 +201,7 @@ public class App {
       }
     }
 
-    System.out.println("Enter the location of this event (optional, leave blank to ignore");
+    System.out.println("Enter the location of this event (optional, leave blank to ignore):");
     String locationString = cli.nextLine();
     Location location = null;
     if (!locationString.isBlank()) {
@@ -269,7 +273,79 @@ public class App {
   }
 
   private void updateEventStatusMenu() {
-    System.out.println("TODO -- Implement me as part of U4 (task 4)");
+    System.out.println("What is the id of the event you want to update event status to?");
+    String eventId = cli.nextLine();
+
+    if (eventId.chars().allMatch(Character::isDigit)) {
+      Event event = eventAccessor.getEventAndParticipantsById(Long.parseLong(eventId));
+      EventStatus eventStatus = null;
+      Date date = null;
+
+      // @formatter:off
+      System.out.println("\nWhat status do you want to update to?\n"
+              + "\t 1. ARCHIVED\n"
+              + "\t 2. CANCELED\n"
+              + "\t 3. PAST\n"
+              + "\t 4. SCHEDULED\n"
+              + "\n"
+              + "Your Answer: ");
+      // @formatter:on
+
+      String selectedStatus = cli.nextLine();
+      switch (Integer.parseInt(selectedStatus)) {
+        case 1:
+          eventStatus = EventStatus.ARCHIVED;
+          break;
+
+        case 2:
+          eventStatus = EventStatus.CANCELED;
+          break;
+
+        case 3:
+          eventStatus = EventStatus.PAST;
+          break;
+
+        case 4:
+          eventStatus = EventStatus.SCHEDULED;
+          System.out.println(
+                  "Enter a date for your event in " + DateUtil.getInstance().getDefaultDateFormat().toUpperCase() + " format:");
+          date = DateUtil.getInstance().convertToDate(cli.nextLine());
+          break;
+
+        default:
+          System.out.println("Unknown value entered");
+      }
+      Event newEvent = eventHandler.updateEventStatus(event, eventStatus, date);
+
+      if (eventStatus != EventStatus.ARCHIVED) {
+        List<Participant> participants = newEvent.getParticipants();
+        for (Participant participant: participants){
+          System.out.println(String.format("%s, do you still want to join this event? (Yes:'yes'; No:any other keys)",
+                  participant.getName()));
+          String answer = cli.nextLine();
+          if (answer.equals("yes")){
+            newEvent.deleteOneParticipants(participant);
+          }
+        }
+      } else {
+        newEvent.setParticipants(new ArrayList<>());
+      }
+
+      //pause
+      eventAccessor.persistEventAndParticipants(newEvent);
+      try(Session session = sessionFactory.openSession()) {
+        Transaction transaction = session.beginTransaction();
+        session.createNativeQuery(
+                "update event set event_status = '" + eventStatus + "' where id_event = " + newEvent.getEventId())
+                .executeUpdate();
+        transaction.commit();
+      } catch (HibernateException e) {
+        LOGGER.error("unable to store / retrieve event type with name '{}'", newEvent.getName(), e);
+      }
+
+    } else {
+      System.out.println("Invalid value passed, needs to be an integer value.");
+    }
   }
 
   private void updateCalendar() {

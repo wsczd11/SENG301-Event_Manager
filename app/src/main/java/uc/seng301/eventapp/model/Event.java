@@ -27,10 +27,7 @@
 
 package uc.seng301.eventapp.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -297,6 +294,27 @@ public abstract class Event {
    */
   public void setParticipants(List<Participant> participants) {
     this.participants = participants;
+  }
+
+  public void deleteOneParticipants(Participant selectParticipant) {
+    List<Participant> newList = new ArrayList<>();
+    for (Participant participant: participants){
+      if (!participant.getParticipantId().equals(selectParticipant.getParticipantId())) {
+        newList.add(participant);
+      }
+    }
+    participants = newList;
+  }
+
+  /**
+   *
+   * @param event updated event
+   */
+  public void sendNotification(Event event){
+    String newStatus = event.toString().split("[ ]")[0];
+    for (Participant participant: participants){
+      participant.printMessage(event.getName(), newStatus);
+    }
   }
 
   @Override

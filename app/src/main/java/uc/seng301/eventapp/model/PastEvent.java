@@ -27,6 +27,7 @@
 
 package uc.seng301.eventapp.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
@@ -77,11 +78,13 @@ public class PastEvent extends Event {
   @Override
   public Event reschedule(Date date) {
     setDate(date);
+    this.sendNotification(new ScheduledEvent(this));
     return new ScheduledEvent(this);
   }
 
   @Override
   public Event archive() {
+    this.sendNotification(new ArchivedEvent(this));
     return new ArchivedEvent(this);
   }
 
