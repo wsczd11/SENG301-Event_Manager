@@ -93,7 +93,7 @@ public class App {
 
   /**
    * Main entry point of the App. Does not expect any argument
-   * 
+   *
    * @param args none expected
    */
   public static void main(String[] args) {
@@ -354,21 +354,11 @@ public class App {
       }
 
       if (eventStatus != EventStatus.ARCHIVED) {
-        List<Participant> participants = newEvent.getParticipants();
-        for (Participant participant: participants){
-          System.out.println(String.format("%s, do you still want to join this event? (Yes:'yes'; No:any other keys)",
-                  participant.getName()));
-          String answer = cli.nextLine();
-          if (!answer.equals("yes")){
-            newEvent.deleteOneParticipants(participant);
-          }
-        }
-//      } else {
-//        newEvent.setParticipants(new ArrayList<>());
+          askForAttend(newEvent);
       }
 
       //pause
-      eventAccessor.persistEventAndParticipants(newEvent);
+//      eventAccessor.persistEventAndParticipants(newEvent);
       try(Session session = sessionFactory.openSession()) {
         Transaction transaction = session.beginTransaction();
         session.createNativeQuery(
@@ -390,14 +380,33 @@ public class App {
     boolean updated = DateUtil.getInstance().changeCurrentDate(cli.nextLine());
     System.out.println("The date has been updated " + (updated ? "successfully." : "unsuccessfully."));
     if (updated) {
-      eventHandler.refreshEvents(sessionFactory);
+      for (Event event: eventHandler.refreshEvents(sessionFactory)){
+          askForAttend(event);
+      }
     }
+  }
+
+    /**
+     * ask user does they still want to join given event
+     * @param event changed event
+     */
+  private void askForAttend(Event event){
+    List<Participant> participants = event.getParticipants();
+    for (Participant participant: participants){
+      System.out.println(String.format("%s, do you still want to join this event? (Yes:'yes'; No:any other keys)",
+                  participant.getName()));
+      String answer = cli.nextLine();
+      if (!answer.equals("yes")){
+        event.deleteOneParticipants(participant);
+      }
+    }
+    eventAccessor.persistEvent(event);
   }
 
   /**
    * Compile the content of all entities stored in the database into user-friendly
    * String.
-   * 
+   *
    * Fully relies on all Entities' toString() method to be fully user-friendly.
    *
    * @return a serialised version of the content of the database.

@@ -77,7 +77,7 @@ public interface EventHandler {
    *
    * @param sessionFactory sessionFactory
    */
-  void refreshEvents(SessionFactory sessionFactory);
+  List<Event> refreshEvents(SessionFactory sessionFactory);
 
   /**
    * Update the status of given event to a new status

@@ -27,6 +27,8 @@
 
 package uc.seng301.eventapp.model;
 
+import uc.seng301.eventapp.accessor.EventAccessor;
+
 import java.util.*;
 
 import javax.persistence.CascadeType;
@@ -103,7 +105,7 @@ public abstract class Event {
   @JoinColumn(name = "id_event_type")
   private EventType eventType;
 
-  @ManyToMany(fetch = FetchType.LAZY)
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "participant_attends_event", joinColumns = @JoinColumn(name = "id_event"), inverseJoinColumns = @JoinColumn(name = "id_participant"))
   private List<Participant> participants;
 

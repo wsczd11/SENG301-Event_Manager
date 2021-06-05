@@ -1,5 +1,6 @@
 package uc.seng301.eventapp.handler;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -109,12 +110,15 @@ public class EventHandlerImpl implements EventHandler {
   }
 
   @Override
-  public void refreshEvents(SessionFactory sessionFactory) {
+  public List<Event> refreshEvents(SessionFactory sessionFactory) {
     // could have been written as a lambda expression, kept as a for-loop for
     // readability
+    List<Event> updateEvent = new ArrayList<>();
     for (Event event : eventAccessor.getAllEventsWithStatus(EventStatus.SCHEDULED)) {
-      if (event.getDate().after(DateUtil.getInstance().getCurrentDate())) {
+      if (!event.getDate().after(DateUtil.getInstance().getCurrentDate())) {
         updateEventStatus(event, EventStatus.PAST, null);
+
+        //pause
         try(Session session = sessionFactory.openSession()) {
           Transaction transaction = session.beginTransaction();
           session.createNativeQuery(
@@ -124,8 +128,10 @@ public class EventHandlerImpl implements EventHandler {
         } catch (HibernateException e) {
           LOGGER.error("unable to store / retrieve event type with name '{}'", event.getName(), e);
         }
+        updateEvent.add(event);
       }
     }
+    return updateEvent;
   }
 
   @Override
