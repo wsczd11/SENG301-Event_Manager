@@ -10,7 +10,7 @@
 
 ### Java class implementing the acceptance tests
 
-**AddParticipantsFeature**
+**AddParticipantsFeature.java**
 
 ## Task 2 - Identify the patterns in the code
 
@@ -107,4 +107,4 @@
 
 ### Java class implementing the acceptance tests
 
-**ChangeStatus**
+**ChangeStatus.java**
