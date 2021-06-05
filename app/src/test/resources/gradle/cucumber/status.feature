@@ -33,7 +33,7 @@ Feature: U4 - Change the status for an event
 #  AC.4 If an event is “archived”, all participants are removed from that event.
 
   Background:
-    Given One event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/06/2021"
+    Given One event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/10/2021"
     And participant "Erica" and participant "Tom" has been add to this event
 
   Scenario: AC1 - I will get notification when the status of an event (which I attending) changed.

@@ -28,7 +28,7 @@
 Feature: U3 - Add participant to event
 
   Background:
-    Given There is one event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/06/2021"
+    Given There is one event with name "SENG301 Lab", description "Let's learn some patterns", type "lab" and date "08/10/2021"
 
   Scenario: AC1 - I can add one existing participant to an event by its name (non-empty).
     Given There is a participant with name "Erica"

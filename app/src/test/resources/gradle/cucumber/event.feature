@@ -44,5 +44,5 @@ Feature: U1 - Create a new event
 
   Scenario: AC 4 - The event date must be in the future, but no later than a year
     Given There is no events with name "Event in the past" and "Event to far in the future"
-    When I want to set the first event date to "07/06/2022" and the second to "01/01/2000"
+    When I want to set the first event date to "07/10/2022" and the second to "01/01/2000"
     Then I expect an exception that disallow me to create any of those
