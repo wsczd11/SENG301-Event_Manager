@@ -112,6 +112,15 @@ public class AddParticipantsFeature {
         givenParticipants = new ArrayList<>();
     }
 
+    @Given("add participants {string}, {string}, {string}, {string} to given list")
+    public void add_a_participant_to_given_list(String name1, String name2, String name3, String name4) {
+        givenParticipants.add(new Participant(name1));
+        givenParticipants.add(new Participant(name2));
+        givenParticipants.add(new Participant(name3));
+        givenParticipants.add(new Participant(name4));
+
+    }
+
     @And("add a participant {string} to given list")
     public void add_a_participant_to_given_list(String name) {
         givenParticipants.add(new Participant(name));
@@ -129,5 +138,13 @@ public class AddParticipantsFeature {
         retrieveEvent = eventAccessor.getEventAndParticipantsById(eventId);
         retrieveParticipants = retrieveEvent.getParticipants();
         Assertions.assertEquals(0, retrieveParticipants.size());
+    }
+
+    @Then("only participant {string} has been add to given event")
+    public void only_participant_has_been_add_to_given_event(String name) {
+        retrieveEvent = eventAccessor.getEventAndParticipantsById(eventId);
+        retrieveParticipants = retrieveEvent.getParticipants();
+        Assertions.assertEquals(1, retrieveParticipants.size());
+        Assertions.assertEquals(name, retrieveParticipants.get(0).getName());
     }
 }

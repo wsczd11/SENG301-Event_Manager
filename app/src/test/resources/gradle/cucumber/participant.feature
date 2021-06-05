@@ -62,3 +62,9 @@ Feature: U3 - Add participant to event
     And add a participant "   " to given list
     When I add given list of participants into event
     Then No participant has been add to given event
+
+  Scenario: AC3 - The name of participant must not only contain space
+    Given A empty list for participants
+    And add participants "   ", "Erica123", "!Erica!!!", "Erica" to given list
+    When I add given list of participants into event
+    Then only participant "Erica" has been add to given event
