@@ -331,7 +331,7 @@ public class App {
           date = DateUtil.getInstance().convertToDate(inputDate);
           Calendar nextYear = Calendar.getInstance();
           nextYear.add(Calendar.YEAR, 1);
-          if (date == null || date.before(new Date()) || date.after(nextYear.getTime())) {
+          if (date == null || date.before(DateUtil.getInstance().getCurrentDate()) || date.after(nextYear.getTime())) {
             System.out.println(String.format("Date '%s' does not follow expected format %s, is in the past or later than one year",
                                               inputDate, DateUtil.getInstance().getDefaultDateFormat()));
             return;
