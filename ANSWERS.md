@@ -103,8 +103,8 @@
 
 ### Feature file (Cucumber Scenarios)
 
-**NAME OF FEATURE FILE**
+**status.feature**
 
 ### Java class implementing the acceptance tests
 
-**NAME OF JAVA FILE**
+**ChangeStatus**

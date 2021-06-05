@@ -7,7 +7,12 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import uc.seng301.eventapp.accessor.EventAccessor;
+import uc.seng301.eventapp.accessor.ParticipantAccessor;
 import uc.seng301.eventapp.model.Event;
 import uc.seng301.eventapp.model.EventStatus;
 import uc.seng301.eventapp.model.Location;
@@ -22,6 +27,7 @@ public class EventHandlerImpl implements EventHandler {
 
   private static final Logger LOGGER = LogManager.getLogger(EventHandlerImpl.class);
   private final EventAccessor eventAccessor;
+
 
   /**
    * Default constructor.
@@ -103,12 +109,21 @@ public class EventHandlerImpl implements EventHandler {
   }
 
   @Override
-  public void refreshEvents() {
+  public void refreshEvents(SessionFactory sessionFactory) {
     // could have been written as a lambda expression, kept as a for-loop for
     // readability
     for (Event event : eventAccessor.getAllEventsWithStatus(EventStatus.SCHEDULED)) {
       if (event.getDate().after(DateUtil.getInstance().getCurrentDate())) {
         updateEventStatus(event, EventStatus.PAST, null);
+        try(Session session = sessionFactory.openSession()) {
+          Transaction transaction = session.beginTransaction();
+          session.createNativeQuery(
+                  "update event set event_status = '" + EventStatus.PAST + "' where id_event = " + event.getEventId())
+                  .executeUpdate();
+          transaction.commit();
+        } catch (HibernateException e) {
+          LOGGER.error("unable to store / retrieve event type with name '{}'", event.getName(), e);
+        }
       }
     }
   }

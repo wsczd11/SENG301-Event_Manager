@@ -363,8 +363,8 @@ public class App {
             newEvent.deleteOneParticipants(participant);
           }
         }
-      } else {
-        newEvent.setParticipants(new ArrayList<>());
+//      } else {
+//        newEvent.setParticipants(new ArrayList<>());
       }
 
       //pause
@@ -390,7 +390,7 @@ public class App {
     boolean updated = DateUtil.getInstance().changeCurrentDate(cli.nextLine());
     System.out.println("The date has been updated " + (updated ? "successfully." : "unsuccessfully."));
     if (updated) {
-      eventHandler.refreshEvents();
+      eventHandler.refreshEvents(sessionFactory);
     }
   }
 

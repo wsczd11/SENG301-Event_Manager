@@ -3,6 +3,7 @@ package uc.seng301.eventapp.handler;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
 import uc.seng301.eventapp.model.Event;
 import uc.seng301.eventapp.model.EventStatus;
 import uc.seng301.eventapp.model.Location;
@@ -73,8 +74,10 @@ public interface EventHandler {
 
   /**
    * Look for and refresh the status of events when the calendar day changes.
+   *
+   * @param sessionFactory sessionFactory
    */
-  void refreshEvents();
+  void refreshEvents(SessionFactory sessionFactory);
 
   /**
    * Update the status of given event to a new status

@@ -87,6 +87,7 @@ public class CanceledEvent extends Event {
   @Override
   public Event archive() {
     this.sendNotification(new ArchivedEvent(this));
+    setParticipants(new ArrayList<>());
     return new ArchivedEvent(this);
   }
 

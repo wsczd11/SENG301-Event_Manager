@@ -85,6 +85,7 @@ public class PastEvent extends Event {
   @Override
   public Event archive() {
     this.sendNotification(new ArchivedEvent(this));
+    setParticipants(new ArrayList<>());
     return new ArchivedEvent(this);
   }
 
